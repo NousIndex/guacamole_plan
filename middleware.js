@@ -1,37 +1,62 @@
 import { NextResponse } from 'next/server';
 
-function timingSafeEqual(a, b) {
-  if (a.length !== b.length) return false;
-  let diff = 0;
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return diff === 0;
+const COOKIE_NAME = 'forge_auth';
+
+function b64urlToBytes(s) {
+  s = s.replace(/-/g, '+').replace(/_/g, '/');
+  const pad = s.length % 4;
+  if (pad) s += '='.repeat(4 - pad);
+  const bin = atob(s);
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
 }
 
-export function middleware(req) {
-  const expectedUser = process.env.AUTH_USER;
-  const expectedPass = process.env.AUTH_PASSWORD;
+async function verifyToken(token, secret) {
+  if (!token) return false;
+  const dot = token.indexOf('.');
+  if (dot < 0) return false;
+  const expStr = token.slice(0, dot);
+  const sig = token.slice(dot + 1);
+  const exp = parseInt(expStr, 10);
+  if (!Number.isFinite(exp) || Date.now() > exp) return false;
 
-  if (!expectedUser || !expectedPass) {
-    return new NextResponse('Auth not configured', { status: 500 });
+  try {
+    const enc = new TextEncoder();
+    const key = await crypto.subtle.importKey(
+      'raw', enc.encode(secret),
+      { name: 'HMAC', hash: 'SHA-256' },
+      false, ['verify']
+    );
+    return await crypto.subtle.verify('HMAC', key, b64urlToBytes(sig), enc.encode(expStr));
+  } catch {
+    return false;
+  }
+}
+
+export async function middleware(req) {
+  const { pathname } = req.nextUrl;
+
+  // Public routes — login page and its API.
+  if (pathname === '/login' || pathname === '/api/login') {
+    return NextResponse.next();
   }
 
-  const header = req.headers.get('authorization');
-  if (header?.startsWith('Basic ')) {
-    try {
-      const decoded = atob(header.slice(6));
-      const idx = decoded.indexOf(':');
-      const user = decoded.slice(0, idx);
-      const pass = decoded.slice(idx + 1);
-      if (timingSafeEqual(user, expectedUser) && timingSafeEqual(pass, expectedPass)) {
-        return NextResponse.next();
-      }
-    } catch {}
+  const secret = process.env.AUTH_SECRET;
+  if (!secret) {
+    return new NextResponse('AUTH_SECRET not configured', { status: 500 });
   }
 
-  return new NextResponse('Authentication required', {
-    status: 401,
-    headers: { 'WWW-Authenticate': 'Basic realm="Forge", charset="UTF-8"' },
-  });
+  const token = req.cookies.get(COOKIE_NAME)?.value;
+  if (await verifyToken(token, secret)) {
+    return NextResponse.next();
+  }
+
+  const url = req.nextUrl.clone();
+  url.pathname = '/login';
+  url.search = '';
+  if (pathname !== '/') url.searchParams.set('next', pathname);
+  return NextResponse.redirect(url);
 }
 
 export const config = {

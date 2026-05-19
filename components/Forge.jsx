@@ -161,17 +161,7 @@ export default function Forge() {
   const deleteSession = (sessionId) => setSessions(prev => prev.filter(s => s.id !== sessionId));
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#09090b' }} className="text-white">
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; background: #09090b; }
-        .font-display { font-family: 'Anton', sans-serif; letter-spacing: 0.01em; }
-        .font-mono    { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-        input[type=number]::-webkit-outer-spin-button,
-        input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-      `}</style>
-
+    <div style={{ minHeight: '100dvh', backgroundColor: '#09090b' }} className="text-white">
       {view === 'home' && (
         <Home
           workouts={workouts}
@@ -429,7 +419,7 @@ function Workout({ workout, sessions, onUpdate, onComplete, onExit }) {
   const lastPerf = getLastPerformance(sessions, exercise.id);
 
   return (
-    <div className="max-w-md mx-auto min-h-screen flex flex-col">
+    <div className="max-w-md mx-auto min-h-dvh flex flex-col">
       <div className="px-5 pt-6 pb-3 flex items-center justify-between">
         <button onClick={() => { if (window.confirm('Quit workout? This session won\'t be saved.')) onExit(); }} className="p-2 -ml-2 text-zinc-400 active:text-white">
           <X className="w-6 h-6" />
@@ -506,11 +496,11 @@ function WorkingView({ exercise, isTimed, timeLeft, timerRunning, currentReps, l
           <div className="mt-3 text-[11px] text-zinc-500 font-mono">{lastSummary}</div>
         )}
 
-        <div className="mt-10">
+        <div className="mt-6">
           {isTimed ? (
             <div>
               <div
-                className="font-mono text-[5.5rem] font-bold tabular-nums leading-none"
+                className="font-mono text-[5rem] font-bold tabular-nums leading-none"
                 style={{ color: timerRunning ? '#a3e635' : 'white' }}
               >
                 {fmtTime(timeLeft)}
@@ -521,11 +511,11 @@ function WorkingView({ exercise, isTimed, timeLeft, timerRunning, currentReps, l
             </div>
           ) : (
             <div>
-              <div className="font-display text-[6.5rem] text-lime-400 leading-none tabular-nums">{currentReps}</div>
+              <div className="font-display text-[5.5rem] text-lime-400 leading-none tabular-nums">{currentReps}</div>
               <div className="text-zinc-500 text-[10px] uppercase tracking-[0.3em] mt-2">
                 REPS · TARGET {exercise.reps || '–'}
               </div>
-              <div className="mt-5 flex items-center justify-center gap-3">
+              <div className="mt-4 flex items-center justify-center gap-3">
                 <button onClick={() => onAdjustReps(-1)} className="px-5 py-2.5 rounded-full bg-zinc-900 border border-zinc-800 font-mono text-sm active:bg-zinc-800">
                   −1
                 </button>
@@ -538,7 +528,7 @@ function WorkingView({ exercise, isTimed, timeLeft, timerRunning, currentReps, l
         </div>
 
         {!isTimed && (
-          <div className="mt-8 flex items-center gap-5">
+          <div className="mt-5 flex items-center gap-5">
             <button onClick={() => onAdjustWeight(-2.5)} className="w-14 h-14 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center active:bg-zinc-800">
               <Minus className="w-5 h-5" />
             </button>
@@ -553,7 +543,7 @@ function WorkingView({ exercise, isTimed, timeLeft, timerRunning, currentReps, l
         )}
       </div>
 
-      <div className="pb-8 pt-4">
+      <div className="pb-6 pt-4">
         {isTimed ? (
           !timerRunning ? (
             <button onClick={onStart} className="w-full bg-lime-400 text-black py-5 rounded-2xl font-bold text-base uppercase tracking-[0.2em] active:bg-lime-500 flex items-center justify-center gap-2">
@@ -616,7 +606,7 @@ function RestingView({ timeLeft, totalRest, currentExercise, nextExercise, nextS
         </div>
       </div>
 
-      <div className="pb-8 pt-4 grid grid-cols-[1fr_2fr_1fr] gap-2.5">
+      <div className="pb-6 pt-4 grid grid-cols-[1fr_2fr_1fr] gap-2.5">
         <button onClick={() => onAdjust(-15)} className="bg-zinc-900 border border-zinc-800 py-4 rounded-2xl text-sm font-mono active:bg-zinc-800">
           −15s
         </button>
@@ -644,7 +634,7 @@ function CompleteView({ workout, elapsedMin, loggedSets, onExit }) {
   const totalReps = loggedSets.reduce((sum, s) => sum + (s.reps || 0), 0);
 
   return (
-    <div className="max-w-md mx-auto min-h-screen flex flex-col px-5 pt-12 pb-8">
+    <div className="max-w-md mx-auto min-h-dvh flex flex-col px-5 pt-12 pb-8">
       <div className="flex flex-col items-center text-center mb-8 pt-4">
         <div className="w-20 h-20 rounded-full bg-lime-400 flex items-center justify-center mb-6">
           <Check className="w-10 h-10 text-black" strokeWidth={3} />
@@ -706,7 +696,7 @@ function HistoryView({ sessions, onBack, onDelete }) {
   const totalSets = sessions.reduce((sum, s) => sum + s.sets.length, 0);
 
   return (
-    <div className="max-w-md mx-auto min-h-screen pb-12">
+    <div className="max-w-md mx-auto min-h-dvh pb-12">
       <div className="px-5 pt-5 pb-4 flex items-center justify-between border-b border-zinc-800 sticky top-0 bg-zinc-950/95 z-10" style={{ backdropFilter: 'blur(8px)' }}>
         <button onClick={onBack} className="text-zinc-400 active:text-white p-1 -ml-1">
           <ChevronLeft className="w-6 h-6" />
@@ -818,7 +808,7 @@ function EditView({ workout, onUpdate, onDone, onResetThis }) {
   };
 
   return (
-    <div className="max-w-md mx-auto min-h-screen pb-24">
+    <div className="max-w-md mx-auto min-h-dvh pb-24">
       <div className="px-5 pt-5 pb-4 flex items-center justify-between border-b border-zinc-800 sticky top-0 bg-zinc-950/95 z-10" style={{ backdropFilter: 'blur(8px)' }}>
         <button onClick={onDone} className="text-zinc-400 active:text-white p-1 -ml-1">
           <ChevronLeft className="w-6 h-6" />
