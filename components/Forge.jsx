@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import {
   ChevronLeft, ChevronRight, Play, SkipForward, Plus, Minus, Edit2, X, Check,
-  Dumbbell, Activity, Heart, Zap, Trash2, ArrowUp, ArrowDown, History as HistoryIcon, ChevronDown
+  Dumbbell, Activity, Heart, Zap, Trash2, ArrowUp, ArrowDown, History as HistoryIcon, ChevronDown,
+  FileText
 } from 'lucide-react';
 import { DEFAULT_WORKOUTS } from '../data/workouts';
 
@@ -219,9 +221,14 @@ function Home({ workouts, sessions, onStart, onEdit, onHistory, onResetAll }) {
             </div>
           </div>
         </div>
-        <button onClick={onHistory} className="p-3 -mr-3 -mt-3 text-zinc-400 active:text-white" aria-label="History">
-          <HistoryIcon className="w-5 h-5" />
-        </button>
+        <div className="flex items-start -mr-3 -mt-3">
+          <Link href="/plan" className="p-3 text-zinc-400 active:text-white" aria-label="Plan">
+            <FileText className="w-5 h-5" />
+          </Link>
+          <button onClick={onHistory} className="p-3 text-zinc-400 active:text-white" aria-label="History">
+            <HistoryIcon className="w-5 h-5" />
+          </button>
+        </div>
       </div>
 
       <div className="space-y-3">
