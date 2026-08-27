@@ -28,14 +28,14 @@ export const DEFAULT_WORKOUTS = [
   {
     id: 'pull', name: 'Upper A — Pull', subtitle: 'Pull-up build, back, biceps', icon: 'dumbbell',
     exercises: [
-      { id: 'p1', name: 'Dead Hang (max effort)',           sets: 3, reps: '',          weight: 0,   restSeconds: 90, durationSeconds: 15 },
-      { id: 'p2', name: 'Feet-Assisted Hang (toes on chair)',sets: 3, reps: '',         weight: 0,   restSeconds: 60, durationSeconds: 45 },
-      { id: 'p3', name: 'Scapular Pull (hang, shrug down)', sets: 3, reps: '5',         weight: 0,   restSeconds: 60 },
-      { id: 'p4', name: 'Negative Pull-Up (5s lower)',      sets: 3, reps: '3',         weight: 0,   restSeconds: 90 },
-      { id: 'p5', name: 'Inverted Row (low bar or table)',  sets: 3, reps: '8-12',      weight: 0,   restSeconds: 75 },
-      { id: 'p6', name: 'One-Arm DB Row (3s lower)',        sets: 4, reps: '10/side',   weight: 10,  restSeconds: 60 },
-      { id: 'p7', name: 'Hammer Curl',                      sets: 3, reps: '12',        weight: 7.5, restSeconds: 45 },
-      { id: 'p8', name: 'Bent-Over Reverse Fly',            sets: 2, reps: '15',        weight: 4,   restSeconds: 45 },
+      { id: 'p1', name: 'Dead Hang (max effort)',            sets: 3, reps: '',          weight: 0,   restSeconds: 90, durationSeconds: 15 },
+      { id: 'p3', name: 'Scapular Pull (hang, shrug down)',  sets: 3, reps: '5',         weight: 0,   restSeconds: 60 },
+      { id: 'p9', name: 'Chair-Assisted Pull-Up',            sets: 3, reps: '6-8',       weight: 0,   restSeconds: 90 },
+      { id: 'p4', name: 'Negative Pull-Up (5s lower)',       sets: 3, reps: '3',         weight: 0,   restSeconds: 90 },
+      { id: 'p6', name: 'One-Arm DB Row (3s lower)',         sets: 4, reps: '10/side',   weight: 10,  restSeconds: 60 },
+      { id: 'p7', name: 'Hammer Curl',                       sets: 3, reps: '12',        weight: 7.5, restSeconds: 45 },
+      { id: 'p8', name: 'Bent-Over Reverse Fly',             sets: 2, reps: '15',        weight: 4,   restSeconds: 45 },
+      { id: 'p2', name: 'Feet-Assisted Hang (finisher)',     sets: 3, reps: '',          weight: 0,   restSeconds: 60, durationSeconds: 45 },
     ]
   },
   {

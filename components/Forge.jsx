@@ -5,9 +5,10 @@ import Link from 'next/link';
 import {
   ChevronLeft, ChevronRight, Play, SkipForward, Plus, Minus, Edit2, X, Check,
   Dumbbell, Activity, Heart, Zap, Trash2, ArrowUp, ArrowDown, History as HistoryIcon, ChevronDown,
-  FileText
+  FileText, Info
 } from 'lucide-react';
 import { DEFAULT_WORKOUTS } from '../data/workouts';
+import { getHowTo } from '../data/howto';
 
 /* ---------- storage (localStorage-backed, async-compatible API) ---------- */
 const storage = {
@@ -488,6 +489,9 @@ function Workout({ workout, sessions, onUpdate, onComplete, onExit }) {
 }
 
 function WorkingView({ exercise, isTimed, timeLeft, timerRunning, currentReps, lastPerf, onStart, onDone, onAdjustWeight, onAdjustReps }) {
+  const [showHowTo, setShowHowTo] = useState(false);
+  const howTo = getHowTo(exercise.name);
+
   const lastSummary = lastPerf ? (
     isTimed
       ? `Last: ${lastPerf.durations.map(d => `${d}s`).join(' · ')}`
@@ -499,6 +503,14 @@ function WorkingView({ exercise, isTimed, timeLeft, timerRunning, currentReps, l
       <div className="flex-1 flex flex-col items-center justify-center text-center">
         <div className="text-zinc-500 text-[10px] uppercase tracking-[0.3em] mb-3">Now</div>
         <h2 className="font-display text-4xl sm:text-5xl leading-[0.95] max-w-xs">{exercise.name.toUpperCase()}</h2>
+        {howTo && (
+          <button
+            onClick={() => setShowHowTo(true)}
+            className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-[10px] uppercase tracking-[0.2em] active:bg-zinc-800 active:text-white"
+          >
+            <Info className="w-3.5 h-3.5" /> How to
+          </button>
+        )}
         {lastSummary && (
           <div className="mt-3 text-[11px] text-zinc-500 font-mono">{lastSummary}</div>
         )}
@@ -566,6 +578,80 @@ function WorkingView({ exercise, isTimed, timeLeft, timerRunning, currentReps, l
             <Check className="w-5 h-5" strokeWidth={3} /> Log Set
           </button>
         )}
+      </div>
+
+      {showHowTo && howTo && (
+        <HowToSheet name={exercise.name} howTo={howTo} onClose={() => setShowHowTo(false)} />
+      )}
+    </div>
+  );
+}
+
+function HowToSheet({ name, howTo, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
+  return (
+    <div className="fixed inset-0 z-50 flex flex-col justify-end">
+      <button
+        onClick={onClose}
+        className="absolute inset-0 bg-black/70 w-full"
+        aria-label="Close"
+        tabIndex={-1}
+      />
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={`How to do ${name}`}
+        className="relative bg-zinc-900 border-t border-zinc-700 rounded-t-3xl max-h-[80vh] overflow-y-auto"
+      >
+        <div className="sticky top-0 bg-zinc-900 px-5 pt-4 pb-3 flex items-start justify-between gap-3 border-b border-zinc-800">
+          <div>
+            <div className="text-zinc-500 text-[10px] uppercase tracking-[0.3em] mb-1">How to</div>
+            <h3 className="font-display text-2xl leading-tight">{name.toUpperCase()}</h3>
+          </div>
+          <button onClick={onClose} className="p-2 -mr-2 -mt-1 text-zinc-400 active:text-white" aria-label="Close">
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        <div className="px-5 py-5 space-y-5">
+          <div>
+            <div className="text-lime-400 text-[10px] uppercase tracking-[0.25em] mb-2">Set up</div>
+            <p className="text-zinc-300 text-sm leading-relaxed">{howTo.setup}</p>
+          </div>
+
+          <div>
+            <div className="text-lime-400 text-[10px] uppercase tracking-[0.25em] mb-2">Do it</div>
+            <ol className="space-y-2.5">
+              {howTo.steps.map((step, i) => (
+                <li key={i} className="grid grid-cols-[1.5rem_1fr] gap-2 items-baseline">
+                  <span className="font-mono text-[11px] text-zinc-500">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="text-zinc-300 text-sm leading-relaxed">{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {howTo.watch && (
+            <div className="bg-zinc-950 border border-zinc-800 rounded-xl p-4">
+              <div className="text-zinc-500 text-[10px] uppercase tracking-[0.25em] mb-2">Common mistake</div>
+              <p className="text-zinc-300 text-sm leading-relaxed">{howTo.watch}</p>
+            </div>
+          )}
+        </div>
+
+        <div className="px-5 pb-6">
+          <button
+            onClick={onClose}
+            className="w-full bg-zinc-800 py-4 rounded-2xl text-sm uppercase tracking-[0.2em] active:bg-zinc-700"
+          >
+            Got it
+          </button>
+        </div>
       </div>
     </div>
   );

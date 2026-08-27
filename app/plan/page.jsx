@@ -92,9 +92,10 @@ const STAGES = [
   },
   {
     when: 'Week 2 onward',
-    title: 'Scap pulls and negatives',
+    title: 'Assisted reps and negatives',
     points: [
       ['Scapular pull', 'Hang with straight arms, pull your shoulder blades down and back so your body rises 2–3 cm. No elbow bend at all. 3 × 5.'],
+      ['Chair-assisted pull-up', '3 × 6–8, feet on the seat. See the assistance ladder below — this is the exercise that actually gets you the first rep.'],
       ['Negative', 'Step off a chair into the top position, chin over the bar, then lower under control. Start with a 3s lower, build to 5s, then 8s. 3 × 3, and end the set the moment a lower turns into a drop.'],
     ],
   },
@@ -111,7 +112,7 @@ const STAGES = [
 const MOVES = [
   ['Feet-assisted hang', 'Hang from the bar with your toes on a chair, supporting just enough weight to hold 45 seconds. Volume you cannot get out of 6-second max hangs.'],
   ['Towel hang', 'Drape a towel over the bar and grip the two ends. Much harder on the grip at the same bodyweight — this is how you overload grip without heavier dumbbells.'],
-  ['Inverted row', 'Bar mounted low, or lie under a table. Body straight, pull your chest to the bar. A horizontal pull-up.'],
+  ['Chair-assisted pull-up', 'Chair under the bar, feet on the seat, legs helping only as much as they must. Your main pulling exercise until the first unassisted rep.'],
   ['DB floor press', 'Bench press lying on the floor. Your elbows stop at the ground, which is also what protects your shoulders without a bench.'],
   ['DB pullover', 'Lie on the floor, both hands on one dumbbell, arms straight, lower it back past your head. Lats and serratus.'],
   ['Bulgarian split squat', 'Rear foot up on a chair, dumbbells at your sides, drop straight down. Brutal at light weight, which is exactly why it is here.'],
@@ -319,7 +320,10 @@ export default function PlanPage() {
           ))}
         </div>
         <p className="text-zinc-400 leading-relaxed mt-5">
-          <strong className="text-white font-semibold">Inverted rows are your best substitute.</strong> If your doorway bar mounts low in the frame — many do — or you can lie under a sturdy table and pull your chest to the edge, that gives you a horizontal pull at a scalable fraction of your bodyweight, which is exactly what 10 kg dumbbells cannot. Make it harder by walking your feet further out, then by elevating them. If neither setup works in your place, do the one-arm rows for 15 slow reps instead and lean harder on the negatives.
+          <strong className="text-white font-semibold">Chair-assisted pull-ups are the scalable pull.</strong> Put a chair under the bar, feet on the seat, and push through your legs for exactly as much help as you need to get your chin over. It trains the real movement including the pulling half, which negatives never do.
+        </p>
+        <p className="text-zinc-400 leading-relaxed mt-3">
+          The assistance ladder, in order: both feet flat on the seat → both heels only → one foot → one toe → nothing. Move down a rung when you can do 3 × 8 at the current one. If the chair sits too low to reach comfortably, a stack of books, a sofa arm, or the edge of a bed all work — what matters is that your legs can take part of the load and give it back gradually.
         </p>
       </section>
 

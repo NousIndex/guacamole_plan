@@ -50,7 +50,7 @@ It's deliberately easy: never go near failure.
 Short on time? Mon / Wed / Fri as Pull → Lower → Push is a complete week.
 
 ### Coverage check
-- **Back / lats / biceps:** hangs, negatives, inverted rows, one-arm rows, curls (Mon + daily)
+- **Back / lats / biceps:** hangs, negatives, assisted pull-ups, one-arm rows, curls (Mon + daily)
 - **Chest / shoulders / triceps:** push-ups, floor press, OHP, laterals, dips, pullover (Thu)
 - **Quads / glutes / hams / calves:** split squat, goblet squat, single-leg RDL, hip thrust, calf raise (Tue + Fri)
 - **Core:** dead bug, side plank, suitcase carry (Tue + Wed)
@@ -107,9 +107,11 @@ isn't much of you to lift. This is a months-long project, not a years-long one.
   accumulate volume out of 6-second sets. Take less weight off the chair each week.
 - Use chalk, or hang a towel over the bar, if your skin gives out before your grip.
 
-**Stage 2 — Scap pulls + negatives (week 2 onward).**
+**Stage 2 — Assisted reps + negatives (week 2 onward).**
 - *Scapular pull:* hang with straight arms, pull your shoulder blades down and
   back so your body rises 2–3 cm. No elbow bend. 3 × 5.
+- *Chair-assisted pull-up:* 3 × 6–8, feet on the seat. See the assistance ladder
+  below — this is the exercise that actually gets you the first rep.
 - *Negative:* step off a chair into the top position (chin over bar), then lower
   under control. Start with a 3s lower, build to 5s, then 8s. 3 × 3, and end the
   set the moment a lower turns into a drop.
@@ -119,12 +121,20 @@ control an 8s negative, test one pull-up at the very start of Upper A, fully
 fresh. Once you get it, replace negatives with `Pull-Up — 5 sets × 1 rep, 2 min
 rest`, and add one rep to one set each week.
 
-**Inverted rows are your best substitute.** If your doorway bar can be mounted
-low in the frame — many can — or you can lie under a sturdy table and pull your
-chest to the edge, that gives you a horizontal pull at a scalable fraction of
-your bodyweight, which is exactly what 10 kg dumbbells cannot. Make it harder by
-walking your feet further out or elevating them. If neither setup works in your
-place, do the one-arm rows for 15 slow reps instead and lean harder on negatives.
+**Chair-assisted pull-ups are the scalable pull.** Put a chair under the bar,
+feet on the seat, and push through your legs for exactly as much help as you
+need to get your chin over. This is better than an inverted row would have
+been: it trains the real movement including the pulling half, which negatives
+never do, and the assistance dials down on its own schedule.
+
+The assistance ladder, in order: both feet flat on the seat → both heels
+only → one foot → one toe → nothing. Move down a rung when you can do 3 × 8 at
+the current one. If the chair sits too low to reach comfortably, a stack of
+books, a sofa arm, or the edge of a bed all work; what matters is that your
+legs can take part of the load and give it back gradually.
+
+Do them third in the session, after scap pulls and before negatives, while
+you're fresh enough for clean reps.
 
 ---
 
@@ -192,8 +202,9 @@ Everything else is in service of these.
 - **Towel hang** — drape a towel over the bar and grip the two ends. Much harder
   on the grip at the same bodyweight, which is how you overload grip without
   heavier dumbbells.
-- **Inverted row** — bar mounted low, or lie under a table; body straight, pull
-  your chest to the bar. A horizontal pull-up.
+- **Chair-assisted pull-up** — chair under the bar, feet on the seat, legs
+  helping only as much as they must. Your main pulling exercise until the first
+  unassisted rep.
 - **DB floor press** — bench press lying on the floor. Your elbows stop at the
   ground, which is also what protects your shoulders without a bench.
 - **DB pullover** — lie on the floor, both hands on one dumbbell, arms straight,
