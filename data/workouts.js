@@ -1,6 +1,15 @@
 // Default workout programs.
 // Edit this file to add, remove, or reconfigure workouts.
 //
+// Tuned for: 2 adjustable dumbbells (10 kg max each), doorway pull-up bar, jump rope.
+// Lifter: 66 kg, 165 cm.
+// Baseline: 0 pull-ups, ~6s dead hang, 10 push-ups, 5 x 1min rope,
+//           10 min farmer hold @ 5.5 kg/hand.
+//
+// Weights below are STARTING points in kg per dumbbell. With a 20 kg total
+// ceiling, progression comes mostly from tempo, pauses, and unilateral
+// variations rather than load — see PLAN.md.
+//
 // Schema:
 //   id              string   unique workout id
 //   name            string   display name
@@ -17,43 +26,67 @@
 
 export const DEFAULT_WORKOUTS = [
   {
-    id: 'upper', name: 'Upper Strength', subtitle: 'Push, pull, arms', icon: 'dumbbell',
+    id: 'pull', name: 'Upper A — Pull', subtitle: 'Pull-up build, back, biceps', icon: 'dumbbell',
     exercises: [
-      { id: 'u1', name: 'DB Bench Press',           sets: 3, reps: '8-10',      weight: 0, restSeconds: 90 },
-      { id: 'u2', name: 'One-Arm DB Row',           sets: 3, reps: '8-10/side', weight: 0, restSeconds: 60 },
-      { id: 'u3', name: 'Seated DB Overhead Press', sets: 3, reps: '8-10',      weight: 0, restSeconds: 90 },
-      { id: 'u4', name: 'Hammer Curl',              sets: 3, reps: '10',        weight: 0, restSeconds: 45 },
-      { id: 'u5', name: 'Overhead Tricep Extension',sets: 3, reps: '10',        weight: 0, restSeconds: 45 },
-      { id: 'u6', name: 'Bent-Over Reverse Fly',    sets: 2, reps: '12',        weight: 0, restSeconds: 45 },
-      { id: 'u7', name: 'Plank',                    sets: 3, reps: '',          weight: 0, restSeconds: 30, durationSeconds: 30 },
+      { id: 'p1', name: 'Dead Hang (max effort)',           sets: 3, reps: '',          weight: 0,   restSeconds: 90, durationSeconds: 15 },
+      { id: 'p2', name: 'Feet-Assisted Hang (toes on chair)',sets: 3, reps: '',         weight: 0,   restSeconds: 60, durationSeconds: 45 },
+      { id: 'p3', name: 'Scapular Pull (hang, shrug down)', sets: 3, reps: '5',         weight: 0,   restSeconds: 60 },
+      { id: 'p4', name: 'Negative Pull-Up (5s lower)',      sets: 3, reps: '3',         weight: 0,   restSeconds: 90 },
+      { id: 'p5', name: 'Inverted Row (low bar or table)',  sets: 3, reps: '8-12',      weight: 0,   restSeconds: 75 },
+      { id: 'p6', name: 'One-Arm DB Row (3s lower)',        sets: 4, reps: '10/side',   weight: 10,  restSeconds: 60 },
+      { id: 'p7', name: 'Hammer Curl',                      sets: 3, reps: '12',        weight: 7.5, restSeconds: 45 },
+      { id: 'p8', name: 'Bent-Over Reverse Fly',            sets: 2, reps: '15',        weight: 4,   restSeconds: 45 },
     ]
   },
   {
-    id: 'cond', name: 'Conditioning', subtitle: 'HIIT + cardio', icon: 'zap',
+    id: 'lower', name: 'Lower + Core', subtitle: 'Single-leg + tempo (light DBs)', icon: 'dumbbell',
     exercises: [
-      { id: 'c1', name: 'Jump Rope Warmup',   sets: 1, reps: '', weight: 0, restSeconds: 60, durationSeconds: 300 },
-      { id: 'c2', name: 'Burpees',            sets: 4, reps: '', weight: 0, restSeconds: 20, durationSeconds: 40 },
-      { id: 'c3', name: 'Mountain Climbers',  sets: 4, reps: '', weight: 0, restSeconds: 20, durationSeconds: 40 },
-      { id: 'c4', name: 'DB Thrusters',       sets: 4, reps: '', weight: 0, restSeconds: 20, durationSeconds: 40 },
-      { id: 'c5', name: 'High Knees',         sets: 4, reps: '', weight: 0, restSeconds: 20, durationSeconds: 40 },
-      { id: 'c6', name: 'Jump Rope Finisher', sets: 1, reps: '', weight: 0, restSeconds: 0,  durationSeconds: 300 },
+      { id: 'l1', name: 'Bulgarian Split Squat',           sets: 3, reps: '10/leg',  weight: 7.5, restSeconds: 90 },
+      { id: 'l2', name: 'Goblet Squat (3s down, 2s pause)',sets: 3, reps: '12',      weight: 10,  restSeconds: 90 },
+      { id: 'l3', name: 'Single-Leg DB RDL',               sets: 3, reps: '10/leg',  weight: 10,  restSeconds: 75 },
+      { id: 'l4', name: 'Single-Leg Hip Thrust (floor)',   sets: 3, reps: '12/leg',  weight: 0,   restSeconds: 60 },
+      { id: 'l5', name: 'Single-Leg Calf Raise (2s pause)',sets: 3, reps: '15/leg',  weight: 10,  restSeconds: 45 },
+      { id: 'l6', name: 'Dead Bug',                        sets: 3, reps: '10/side', weight: 0,   restSeconds: 30 },
+      { id: 'l7', name: 'Side Plank (each side)',          sets: 2, reps: '',        weight: 0,   restSeconds: 30, durationSeconds: 25 },
     ]
   },
   {
-    id: 'lower', name: 'Lower + Posterior', subtitle: 'Legs, hams, calves', icon: 'dumbbell',
+    id: 'push', name: 'Upper B — Push', subtitle: 'Push-ups lead, DBs assist', icon: 'dumbbell',
     exercises: [
-      { id: 'l1', name: 'Goblet Squat',         sets: 3, reps: '10',      weight: 0, restSeconds: 90 },
-      { id: 'l2', name: 'DB Romanian Deadlift', sets: 3, reps: '10',      weight: 0, restSeconds: 90 },
-      { id: 'l3', name: 'DB Step-Ups',          sets: 3, reps: '8/leg',   weight: 0, restSeconds: 60 },
-      { id: 'l4', name: 'Walking Lunges',       sets: 2, reps: '10/leg',  weight: 0, restSeconds: 60 },
-      { id: 'l5', name: 'Standing Calf Raise',  sets: 3, reps: '15',      weight: 0, restSeconds: 45 },
-      { id: 'l6', name: 'Dead Bug',             sets: 3, reps: '10/side', weight: 0, restSeconds: 30 },
+      { id: 'h1', name: 'Push-Up (submax, crisp reps)',  sets: 5, reps: '6',     weight: 0,   restSeconds: 60 },
+      { id: 'h2', name: 'DB Floor Press (3s down)',      sets: 4, reps: '12',    weight: 10,  restSeconds: 75 },
+      { id: 'h3', name: 'Seated DB Overhead Press',      sets: 4, reps: '8-10',  weight: 7.5, restSeconds: 90 },
+      { id: 'h4', name: 'DB Lateral Raise',              sets: 3, reps: '15',    weight: 4,   restSeconds: 45 },
+      { id: 'h5', name: 'Chair Dip (feet out front)',    sets: 3, reps: '10',    weight: 0,   restSeconds: 60 },
+      { id: 'h6', name: 'Overhead Tricep Extension',     sets: 3, reps: '12',    weight: 7.5, restSeconds: 45 },
+      { id: 'h7', name: 'DB Pullover (floor)',           sets: 3, reps: '12',    weight: 10,  restSeconds: 60 },
+    ]
+  },
+  {
+    id: 'cond', name: 'Conditioning', subtitle: 'Rope intervals + full-body finisher', icon: 'zap',
+    exercises: [
+      { id: 'c1', name: 'Jump Rope Warmup (easy pace)', sets: 2, reps: '',  weight: 0,   restSeconds: 60, durationSeconds: 60 },
+      { id: 'c2', name: 'Jump Rope Interval',           sets: 6, reps: '',  weight: 0,   restSeconds: 45, durationSeconds: 60 },
+      { id: 'c3', name: 'DB Thruster',                  sets: 3, reps: '10',weight: 7.5, restSeconds: 60 },
+      { id: 'c4', name: 'DB Suitcase Carry March',      sets: 3, reps: '',  weight: 10,  restSeconds: 45, durationSeconds: 40 },
+      { id: 'c5', name: 'Jump Rope Cooldown',           sets: 2, reps: '',  weight: 0,   restSeconds: 45, durationSeconds: 60 },
+    ]
+  },
+  {
+    id: 'daily', name: 'Daily Practice', subtitle: '12 min — skill, never to failure', icon: 'activity',
+    exercises: [
+      { id: 'd1', name: 'Dead Hang (~70% of max)',    sets: 4, reps: '',   weight: 0, restSeconds: 60, durationSeconds: 8 },
+      { id: 'd2', name: 'Towel Hang (grip, over bar)',sets: 2, reps: '',   weight: 0, restSeconds: 60, durationSeconds: 15 },
+      { id: 'd3', name: 'Scapular Pull',              sets: 3, reps: '5',  weight: 0, restSeconds: 45 },
+      { id: 'd4', name: 'Push-Up (half your max)',    sets: 4, reps: '5',  weight: 0, restSeconds: 60 },
+      { id: 'd5', name: 'Bodyweight Squat',           sets: 2, reps: '15', weight: 0, restSeconds: 45 },
     ]
   },
   {
     id: 'easy', name: 'Easy Cardio', subtitle: 'Active recovery', icon: 'heart',
     exercises: [
-      { id: 'e1', name: 'Jump Rope Intervals', sets: 10, reps: '', weight: 0, restSeconds: 30, durationSeconds: 60 },
+      { id: 'e1', name: 'Jump Rope (conversational)', sets: 5, reps: '', weight: 0, restSeconds: 60, durationSeconds: 60 },
+      { id: 'e2', name: 'Dead Hang (easy)',           sets: 3, reps: '', weight: 0, restSeconds: 60, durationSeconds: 8 },
     ]
   }
 ];

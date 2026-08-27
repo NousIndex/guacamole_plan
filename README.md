@@ -32,7 +32,7 @@ Follow the prompts. You get a permanent URL. Or push to GitHub and import the re
 
 ## Edit defaults
 
-The 4 starter workouts live in `components/Forge.jsx` at the top (`DEFAULT_WORKOUTS`). Either edit the file or use the in-app **Edit** button (changes save to localStorage).
+The starter workouts live in `data/workouts.js` (`DEFAULT_WORKOUTS`), and the plan behind them is documented in `PLAN.md`. Either edit the file or use the in-app **Edit** button (changes save to localStorage).
 
 ## Reset stored data
 
