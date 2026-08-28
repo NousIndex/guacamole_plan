@@ -33,14 +33,15 @@ export const HOW_TO = {
     ],
     watch: 'Standing on the chair. Your arms should still be loaded.',
   },
-  'towel hang': {
-    setup: 'Drape a towel over the bar, grip one end in each hand.',
+  'uneven hang': {
+    setup: 'One hand overhand on the bar, the other gripping that wrist.',
     steps: [
-      'Grip at the same height on both ends.',
-      'Hang with straight arms, shoulders active.',
+      'Most of your weight hangs from the hand on the bar.',
+      'The wrist hand takes only as much as it must.',
       'Expect a fraction of your normal hang time — that is the point.',
+      'Swap sides each set.',
     ],
-    watch: 'A thin, slippery towel. Use a thick one.',
+    watch: 'Doing this before a 30s two-hand hang is comfortable. It is a later step.',
   },
   'scapular pull': {
     setup: 'Dead hang, arms completely straight.',

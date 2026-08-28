@@ -28,8 +28,8 @@ export const DEFAULT_WORKOUTS = [
   {
     id: 'pull', name: 'Upper A — Pull', subtitle: 'Pull-up build, back, biceps', icon: 'dumbbell',
     exercises: [
-      { id: 'p1', name: 'Dead Hang (max effort)',            sets: 3, reps: '',          weight: 0,   restSeconds: 90, durationSeconds: 15 },
       { id: 'p3', name: 'Scapular Pull (hang, shrug down)',  sets: 3, reps: '5',         weight: 0,   restSeconds: 60 },
+      { id: 'p1', name: 'Dead Hang (max effort)',            sets: 3, reps: '',          weight: 0,   restSeconds: 90, durationSeconds: 15 },
       { id: 'p9', name: 'Chair-Assisted Pull-Up',            sets: 3, reps: '6-8',       weight: 0,   restSeconds: 90 },
       { id: 'p4', name: 'Negative Pull-Up (5s lower)',       sets: 3, reps: '3',         weight: 0,   restSeconds: 90 },
       { id: 'p6', name: 'One-Arm DB Row (3s lower)',         sets: 4, reps: '10/side',   weight: 10,  restSeconds: 60 },
@@ -75,9 +75,9 @@ export const DEFAULT_WORKOUTS = [
   {
     id: 'daily', name: 'Daily Practice', subtitle: '12 min — skill, never to failure', icon: 'activity',
     exercises: [
-      { id: 'd1', name: 'Dead Hang (~70% of max)',    sets: 4, reps: '',   weight: 0, restSeconds: 60, durationSeconds: 8 },
-      { id: 'd2', name: 'Towel Hang (grip, over bar)',sets: 2, reps: '',   weight: 0, restSeconds: 60, durationSeconds: 15 },
       { id: 'd3', name: 'Scapular Pull',              sets: 3, reps: '5',  weight: 0, restSeconds: 45 },
+      { id: 'd1', name: 'Dead Hang (~70% of max)',    sets: 3, reps: '',   weight: 0, restSeconds: 60, durationSeconds: 4 },
+      { id: 'd2', name: 'Feet-Assisted Hang (easy)',  sets: 2, reps: '',   weight: 0, restSeconds: 60, durationSeconds: 30 },
       { id: 'd4', name: 'Push-Up (half your max)',    sets: 4, reps: '5',  weight: 0, restSeconds: 60 },
       { id: 'd5', name: 'Bodyweight Squat',           sets: 2, reps: '15', weight: 0, restSeconds: 45 },
     ]

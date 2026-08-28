@@ -87,7 +87,7 @@ const STAGES = [
     points: [
       ['Max hangs', '3 sets, full 90s rest. Start at 4–5s, about 70% of your best, not 6. Add roughly 2s per set per week.'],
       ['Feet-assisted hangs', 'Toes on a chair taking just enough weight that you can hold 45s. This is where the endurance actually gets built — you cannot accumulate volume out of 6-second sets. Take less weight off the chair each week.'],
-      [null, 'Use chalk, or hang a towel over the bar, if your skin gives out before your grip does.'],
+      [null, 'If your skin gives out before your grip does, use chalk, or lay an old t-shirt over the bar to soften it.'],
     ],
   },
   {
@@ -111,7 +111,7 @@ const STAGES = [
 
 const MOVES = [
   ['Feet-assisted hang', 'Hang from the bar with your toes on a chair, supporting just enough weight to hold 45 seconds. Volume you cannot get out of 6-second max hangs.'],
-  ['Towel hang', 'Drape a towel over the bar and grip the two ends. Much harder on the grip at the same bodyweight — this is how you overload grip without heavier dumbbells.'],
+  ['Uneven hang', 'One hand on the bar, the other gripping that wrist, so most of your weight sits on one side. Grip overload for later — only once a 30s hang is comfortable.'],
   ['Chair-assisted pull-up', 'Chair under the bar, feet on the seat, legs helping only as much as they must. Your main pulling exercise until the first unassisted rep.'],
   ['DB floor press', 'Bench press lying on the floor. Your elbows stop at the ground, which is also what protects your shoulders without a bench.'],
   ['DB pullover', 'Lie on the floor, both hands on one dumbbell, arms straight, lower it back past your head. Lats and serratus.'],

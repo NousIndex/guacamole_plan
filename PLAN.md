@@ -43,9 +43,15 @@ and the floor is what carries you from there.
 | Sat | **Easy Cardio** or full rest | ~13 min |
 | Sun | Rest | — |
 
-**Daily Practice** (12 min) is optional but it's the single biggest lever on
+**Daily Practice** (~18 min) is optional but it's the single biggest lever on
 the pull-up. Do it Tue / Wed / Sat — any day that isn't Upper A or Upper B.
-It's deliberately easy: never go near failure.
+
+It is deliberately easy and **nothing in it should ever go to failure.** The
+hang target is ~70% of your current max — 4s while your max is 6s — so raise it
+as your max grows, and stop the set at the number even if you could hold on.
+If your grip is still cooked by the end, cut the dead hangs to 2 sets, or drop
+the bar work from this session entirely and keep only push-ups and squats. The
+session is a top-up, not a workout.
 
 Short on time? Mon / Wed / Fri as Pull → Lower → Push is a complete week.
 
@@ -54,7 +60,7 @@ Short on time? Mon / Wed / Fri as Pull → Lower → Push is a complete week.
 - **Chest / shoulders / triceps:** push-ups, floor press, OHP, laterals, dips, pullover (Thu)
 - **Quads / glutes / hams / calves:** split squat, goblet squat, single-leg RDL, hip thrust, calf raise (Tue + Fri)
 - **Core:** dead bug, side plank, suitcase carry (Tue + Wed)
-- **Grip / forearms:** hangs, towel hangs, suitcase carry (Mon + Wed + daily)
+- **Grip / forearms:** hangs, assisted hangs, suitcase carry (Mon + Wed + daily)
 - **Conditioning:** rope (Wed + Sat)
 
 ---
@@ -99,13 +105,18 @@ can't get heavy enough to matter. Hanging is the grip work now.
 The good news: **66 kg at 165 cm is a favourable build for pull-ups.** There
 isn't much of you to lift. This is a months-long project, not a years-long one.
 
+**Order matters.** Scapular pulls come *before* the hangs in both sessions.
+They cost almost no grip, and doing them after 100+ seconds of hanging means
+doing them with nothing left. Everything on the bar draws from the same tank.
+
 **Stage 1 — Own the hang (weeks 1–4).** Target: 30s.
 - *Max hangs:* 3 sets, full 90s rest. Start at 4–5s (≈70% of your best), not 6.
   Add ~2s per set per week.
 - *Feet-assisted hangs:* toes on a chair taking just enough weight that you can
   hold 45s. This is where the endurance actually gets built — you can't
   accumulate volume out of 6-second sets. Take less weight off the chair each week.
-- Use chalk, or hang a towel over the bar, if your skin gives out before your grip.
+- If your skin gives out before your grip does, use chalk, or lay an old t-shirt
+  or hoodie over the bar to soften it.
 
 **Stage 2 — Assisted reps + negatives (week 2 onward).**
 - *Scapular pull:* hang with straight arms, pull your shoulder blades down and
@@ -135,6 +146,13 @@ legs can take part of the load and give it back gradually.
 
 Do them third in the session, after scap pulls and before negatives, while
 you're fresh enough for clean reps.
+
+**On grip:** there is no dedicated grip exercise in this plan, and that is
+deliberate — at 6 seconds, the dead hang *is* your grip training, at full
+bodyweight. Revisit this only if the picture flips later: you can hold 30s but
+your hands give out before your shoulders do. Then overload it with an uneven
+hang — one hand on the bar, the other gripping that wrist, so most of your
+weight sits on one side.
 
 ---
 
@@ -199,9 +217,6 @@ Everything else is in service of these.
 - **Feet-assisted hang** — hang from the bar with your toes on a chair,
   supporting just enough weight to hold 45 seconds. Volume you can't get out of
   6-second max hangs.
-- **Towel hang** — drape a towel over the bar and grip the two ends. Much harder
-  on the grip at the same bodyweight, which is how you overload grip without
-  heavier dumbbells.
 - **Chair-assisted pull-up** — chair under the bar, feet on the seat, legs
   helping only as much as they must. Your main pulling exercise until the first
   unassisted rep.
